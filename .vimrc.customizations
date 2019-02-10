@@ -1,0 +1,10 @@
+"" Turn on syntax highlighting
+syntax on
+
+"" Turn on numbers
+set number
+
+"" Change the colors to awesome
+colorscheme molokai
+set background=dark
+
