@@ -13,10 +13,9 @@ sudo yum -y install python34 python34-devel gcc ncurses ncurses-devel python pyt
 
 
 # Build latest VIM from src
-sudo cd /usr/src/
-sudo git clone https://github.com/vim/vim.git
-sudo cd vim
-./configure --with-features=huge \
+sudo git clone https://github.com/vim/vim.git /usr/src/vim
+cd /usr/src/vim
+sudo ./configure --with-features=huge \
     --enable-multibyte \
     --enable-rubyinterp=yes \
     --enable-pythoninterp=yes \
