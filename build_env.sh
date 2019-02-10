@@ -32,7 +32,6 @@ sudo cd vim
 sudo make install
 sudo ln -s /usr/local/bin/vim /usr/bin/vim
 
-git clone https://github.com/A93572/dev_setup.git .env/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.env/.vim/bundle/Vundle.vim
 cd ~/.env/.vim/bundle/YouCompleteMe
 ./install.py --all
