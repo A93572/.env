@@ -1,16 +1,17 @@
+while [[ -d ${userHome} ]]; do
+    read -n -r -p "Enter user's home directory: " userHome
+done
+
 # Clean env
 yum -y remove vim
-rm -rf ~/.vim*
-
+rm -rf $usersHome/.vim*
 
 # build with python support
 yum -y install epel-release
 yum -y update
 
-
 # Install packages
 yum -y install python34 python34-devel gcc ncurses ncurses-devel python python-devel ruby ruby-devel lua lua-devel luajit luajit-devel ctags tcl-devel perl perl-devel perl-ExtUtils-ParseXS perl-ExtUtils-XSpp perl-ExtUtils-CBuilder perl-ExtUtils-Embed mono-devel golang golang-src npm cargo cmake
-
 
 # Build latest VIM from src
 git clone https://github.com/vim/vim.git /usr/src/vim
@@ -31,29 +32,29 @@ cd /usr/src/vim
 make install
 ln -s /usr/local/bin/vim /usr/bin/vim
 
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.env/.vim/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git $usersHome/.env/.vim/bundle/Vundle.vim
 
-rm -rf ~/.vim/
-rm -rf ~/.vimrc
-rm -rf ~/.viminfo
-ln -s ~/.env/.vim/ ~/.vim
-ln -s ~/.env/.vimrc ~/.vimrc
-ln -s ~/.env/.viminfo ~/.viminfo
-rm -rf ~/.bashrc
-rm -rf ~/.bash_logout
-rm -rf ~/.bash_profile
-ln -s ~/.env/.bashrc ~/.bashrc
-ln -s ~/.env/.bash_logout ~/.bash_logout
-ln -s ~/.env/.bash_profile ~/.bash_profile
+rm -rf $usersHome/.vim/
+rm -rf $usersHome/.vimrc
+rm -rf $usersHome/.viminfo
+ln -s $usersHome/.env/.vim/ $usersHome/.vim
+ln -s $usersHome/.env/.vimrc $usersHome/.vimrc
+ln -s $usersHome/.env/.viminfo $usersHome/.viminfo
+rm -rf $usersHome/.bashrc
+rm -rf $usersHome/.bash_logout
+rm -rf $usersHome/.bash_profile
+ln -s $usersHome/.env/.bashrc $usersHome/.bashrc
+ln -s $usersHome/.env/.bash_logout $usersHome/.bash_logout
+ln -s $usersHome/.env/.bash_profile $usersHome/.bash_profile
+
+echo 'When VIM launches execute ":VundleInstall"'
 
 while [[ -z ${anyKey+x} ]]
 do
-    read -n1 -r -p "Issue :VundleInstall..." anyKey
+    read -n1 -r -p "Press anykey to continue..." anyKey
 done
 
 vim
 
-cd ~/.env/.vim/bundle/YouCompleteMe
+cd $usersHome/.env/.vim/bundle/YouCompleteMe
 ./install.py --all
-
-
