@@ -10,7 +10,7 @@ sudo yum -y update
 sudo yum -y install python34 python34-devel gcc ncurses ncurses-devel python python-devel ruby ruby-devel lua lua-devel luajit luajit-devel ctags tcl-devel perl perl-devel perl-ExtUtils-ParseXS perl-ExtUtils-XSpp perl-ExtUtils-CBuilder perl-ExtUtils-Embed mono-devel golang golang-src npm cargo cmake
 
 # Build latest VIM from src
-git clone https://github.com/vim/vim.git /usr/src/vim
+sudo git clone https://github.com/vim/vim.git /usr/src/vim
 cd /usr/src/vim
 sudo ./configure --with-features=huge \
     --enable-multibyte \
