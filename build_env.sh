@@ -32,9 +32,17 @@ sudo make install
 sudo ln -s /usr/local/bin/vim /usr/bin/vim
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.env/.vim/bundle/Vundle.vim
+
+
+while [[ -z ${anyKey+x} ]]
+do
+    read -n1 -r -p "Issue :VundleInstall..." anyKey
+done
+
+vim
+
 cd ~/.env/.vim/bundle/YouCompleteMe
 ./install.py --all
-
 
 rm -rf ~/.vim/
 rm -rf ~/.vimrc
