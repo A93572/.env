@@ -33,17 +33,6 @@ ln -s /usr/local/bin/vim /usr/bin/vim
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.env/.vim/bundle/Vundle.vim
 
-
-while [[ -z ${anyKey+x} ]]
-do
-    read -n1 -r -p "Issue :VundleInstall..." anyKey
-done
-
-vim
-
-cd ~/.env/.vim/bundle/YouCompleteMe
-./install.py --all
-
 rm -rf ~/.vim/
 rm -rf ~/.vimrc
 rm -rf ~/.viminfo
@@ -56,3 +45,15 @@ rm -rf ~/.bash_profile
 ln -s ~/.env/.bashrc ~/.bashrc
 ln -s ~/.env/.bash_logout ~/.bash_logout
 ln -s ~/.env/.bash_profile ~/.bash_profile
+
+while [[ -z ${anyKey+x} ]]
+do
+    read -n1 -r -p "Issue :VundleInstall..." anyKey
+done
+
+vim
+
+cd ~/.env/.vim/bundle/YouCompleteMe
+./install.py --all
+
+
