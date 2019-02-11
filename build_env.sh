@@ -12,7 +12,7 @@ sudo yum -y install python34 python34-devel gcc ncurses ncurses-devel python pyt
 # Build latest VIM from src
 git clone https://github.com/vim/vim.git /usr/src/vim
 cd /usr/src/vim
-./configure --with-features=huge \
+sudo ./configure --with-features=huge \
     --enable-multibyte \
     --enable-rubyinterp=yes \
     --enable-pythoninterp=yes \
@@ -43,7 +43,7 @@ ln -s ~/.env/.bashrc ~/.bashrc
 ln -s ~/.env/.bash_logout ~/.bash_logout
 ln -s ~/.env/.bash_profile ~/.bash_profile
 
-echo 'When VIM launches execute ":VundleInstall"'
+echo 'When VIM launches, execute ":VundleInstall"'
 
 while [[ -z ${anyKey+x} ]]
 do
