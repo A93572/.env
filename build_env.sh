@@ -1,5 +1,5 @@
-until [[ -d ${userHome} ]]; do
-    read -r -p "Enter user's home directory: " userHome
+until [[ -d ${usersHome} ]]; do
+    read -r -p "Enter user's home directory: " usersHome
 done
 
 # Clean env
