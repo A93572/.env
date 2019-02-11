@@ -47,7 +47,7 @@ echo 'When VIM launches, execute ":VundleInstall"'
 
 while [[ -z ${anyKey+x} ]]
 do
-    read -n1 -r -p "Press anykey to continue..." anyKey
+    read -n1 -r -p "Press any key to continue..." anyKey
 done
 
 vim
