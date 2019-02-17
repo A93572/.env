@@ -15,7 +15,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'craigemery/vim-autotag'
 Plugin 'majutsushi/tagbar'
-Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

@@ -10,9 +10,17 @@ fi
 
 # User specific aliases and functions
 
-## Source custom alias fie
-if [ -f ~/.bashrc.custom]; then
-	~/.bashrc.custom
+## Source custom alias file
+if [ -f ~/.env/.bashrc.custom ]; then
+    . ~/.env/.bashrc.custom
 fi
 
+# Execute powerline
+powerline-daemon -q
+. /usr/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+
+# Execute tmux
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+    exec tmux
+fi
 
