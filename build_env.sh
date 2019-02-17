@@ -7,7 +7,7 @@ sudo yum -y install epel-release
 sudo yum -y update
 
 # Install packages
-sudo yum -y install python34 python34-devel gcc ncurses ncurses-devel python python-devel ruby ruby-devel lua lua-devel luajit luajit-devel ctags tcl-devel perl perl-devel perl-ExtUtils-ParseXS perl-ExtUtils-XSpp perl-ExtUtils-CBuilder perl-ExtUtils-Embed mono-devel golang golang-src npm cargo cmake
+sudo yum -y install python34 python34-devel python-pip gcc ncurses ncurses-devel python python-devel ruby ruby-devel lua lua-devel luajit luajit-devel ctags tcl-devel perl perl-devel perl-ExtUtils-ParseXS perl-ExtUtils-XSpp perl-ExtUtils-CBuilder perl-ExtUtils-Embed mono-devel golang golang-src npm cargo cmake
 
 # Build latest VIM from src
 sudo git clone https://github.com/vim/vim.git /usr/src/vim
@@ -54,3 +54,25 @@ vim
 
 cd ~/.env/.vim/bundle/YouCompleteMe
 ./install.py --all
+
+#Upgrade pip
+sudo pip install --upgrade pip
+
+#Install powerline
+sudo pip install powerline-status
+
+# Install Fonts
+cd /tmp
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+# Install for root
+sudo ./install.sh
+# Install for you
+./install.sh
+
+# clean-up a bit
+cd ..
+rm -rf fonts
+
