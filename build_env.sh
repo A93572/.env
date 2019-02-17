@@ -42,6 +42,7 @@ rm -rf ~/.bash_profile
 ln -s ~/.env/.bashrc ~/.bashrc
 ln -s ~/.env/.bash_logout ~/.bash_logout
 ln -s ~/.env/.bash_profile ~/.bash_profile
+ln -s ~/.env/.tmux.conf ~/.tmux.conf
 
 echo 'When VIM launches, execute ":VundleInstall"'
 
