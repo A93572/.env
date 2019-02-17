@@ -1,0 +1,2 @@
+" Enable statusline 
+set laststatus=2
