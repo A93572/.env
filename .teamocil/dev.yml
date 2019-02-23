@@ -1,0 +1,9 @@
+### Simple two pane window
+windows:
+  - name: dev 
+    root: ~/dev
+    layout: 79f2,190x44,0,0{125x44,0,0,52,64x44,126,0[64x22,126,0,53,64x21,126,23,54]}
+    panes:
+      - vim
+      - git status
+      - ls
